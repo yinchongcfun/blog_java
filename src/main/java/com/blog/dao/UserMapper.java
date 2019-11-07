@@ -1,21 +1,12 @@
 package com.blog.dao;
 
+import com.blog.TkMapper;
 import com.blog.entity.User;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
-/**
- * @author cfun
- * @description 用户dao
- * @date 2019-11-06
- */
-
-@Repository
-public interface UserDao {
-
+public interface UserMapper extends TkMapper<User> {
     /**
-     * @desc: 通过账号和密码查询对应信息,登录用
+     * @desc: 通过账号和密码查询对应信息, 登录用
      * @author:cfun
      * @date:2019-11-06
      **/

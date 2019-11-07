@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blog.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.blog.entity.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="email_verified_at" jdbcType="TIMESTAMP" property="emailVerifiedAt" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="remember_token" jdbcType="VARCHAR" property="rememberToken" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, name, email, email_verified_at, password, remember_token, created_at, updated_at
+  </sql>
+
+    <select id="queryUserByEmailAndPwd" resultType="com.blog.entity.User">
+		select * from where email=#{email} and password=#{password}
+	</select>
+
+    <insert id="registerWithEmailAndPassword">
+		insert  into user (email,password) values(#{email},#{password})
+	</insert>
+</mapper>

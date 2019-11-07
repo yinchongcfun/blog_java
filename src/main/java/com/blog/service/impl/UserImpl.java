@@ -1,6 +1,5 @@
 package com.blog.service.impl;
 
-import com.blog.dao.UserDao;
 import com.blog.entity.User;
 import com.blog.service.UserService;
 import com.blog.util.MD5;

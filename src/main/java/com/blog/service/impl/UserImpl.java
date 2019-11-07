@@ -1,5 +1,6 @@
 package com.blog.service.impl;
 
+import com.blog.dao.UserMapper;
 import com.blog.entity.User;
 import com.blog.service.UserService;
 import com.blog.util.MD5;
@@ -15,16 +16,16 @@ import org.springframework.stereotype.Service;
 public class UserImpl implements UserService {
 
     @Autowired
-    private UserDao userDao;
+    private UserMapper userMapper;
 
     @Override
-    public User getUserByEmailAndPwd(String emial, String password) {
-        return userDao.queryUserByEmailAndPwd(emial, MD5.getMd5(password));
+    public User getUserByEmailAndPwd(String email, String password) {
+        return userMapper.queryUserByEmailAndPwd(email, MD5.getMd5(password));
     }
 
     @Override
-    public User registerWithEmailAndPassword(String emial, String password) {
-        return userDao.registerWithEmailAndPassword(emial, MD5.getMd5(password));
+    public User registerWithEmailAndPassword(String email, String password) {
+        return userMapper.registerWithEmailAndPassword(email, MD5.getMd5(password));
 
     }
 }

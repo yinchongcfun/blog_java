@@ -14,13 +14,13 @@ public interface UserService {
      * @author:cfun
      * @date:2019-11-06
      **/
-    User getUserByEmailAndPwd(String emial, String password);
+    User getUserByEmailAndPwd(String email, String password);
 
     /**
      * @desc:通过帐号和密码获取平台帐号信息
      * @author:cfun
      * @date:2019-11-06
      **/
-    User registerWithEmailAndPassword(String emial, String password);
+    User registerWithEmailAndPassword(String email, String password);
 
 }

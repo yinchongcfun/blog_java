@@ -24,10 +24,10 @@ public class LoginController extends ChekParams {
     private UserService userService;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public MyResponse<Object> login(@RequestParam(value = "password") String password, @RequestParam(value = "emial") String emial) {
+    public MyResponse<Object> login(@RequestParam(value = "password") String password, @RequestParam(value = "email") String email) {
         checkParamNull(password, "参数不正确");
-        checkParamNull(emial, "参数不正确");
-        User user =userService.getUserByEmailAndPwd(emial,password);
+        checkParamNull(email, "参数不正确");
+        User user =userService.getUserByEmailAndPwd(email,password);
         if(user!=null){
             return MyResponse.createSuccess();
         }else{

@@ -22,10 +22,10 @@
   </sql>
 
     <select id="queryUserByEmailAndPwd" resultType="com.blog.entity.User">
-		select * from where email=#{email} and password=#{password}
+		select * from users where email=#{email} and password=#{password}
 	</select>
 
     <insert id="registerWithEmailAndPassword">
-		insert  into user (email,password) values(#{email},#{password})
+		insert  into users (email,password) values(#{email},#{password})
 	</insert>
 </mapper>

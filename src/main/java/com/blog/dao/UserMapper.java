@@ -19,5 +19,5 @@ public interface UserMapper extends TkMapper<User> {
      * @author:cfun
      * @date:2019-11-06
      **/
-    User registerWithEmailAndPassword(@Param("email") String email, @Param("password") String password);
+    int registerWithEmailAndPassword(@Param("email") String email, @Param("password") String password);
 }

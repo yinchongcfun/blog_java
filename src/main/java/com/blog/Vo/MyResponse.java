@@ -1,6 +1,7 @@
 package com.blog.Vo;
 
 import com.blog.enums.ResponseEnum;
+import lombok.Data;
 
 import java.io.Serializable;
 
@@ -9,6 +10,7 @@ import java.io.Serializable;
  * @description api返回接口数据包装类
  * @date 2019-11-06
  */
+@Data
 public class MyResponse<T> implements Serializable {
     private int code;
     private String msg;

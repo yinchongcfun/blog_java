@@ -21,6 +21,6 @@ public interface UserService {
      * @author:cfun
      * @date:2019-11-06
      **/
-    User registerWithEmailAndPassword(String email, String password);
+    int registerWithEmailAndPassword(String email, String password);
 
 }

@@ -22,20 +22,24 @@
     <!--
       WARNING - @mbg.genera
     -->
-    <result column="desc" jdbcType="LONGVARCHAR" property="desc" />
-    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="desc" jdbcType="VARCHAR"  property="desc" />
+    <result column="content" jdbcType="VARCHAR"  property="content" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--
       WARNING - @mbg.generated
     -->
-    id, category_id, title, img, tags, cover, sort, star, status, is_hot, created_at, 
+    id, category_id,title, img, tags, cover, sort, star, status, is_hot, created_at,
     updated_at
   </sql>
   <sql id="Blob_Column_List">
     <!--
       WARNING - @mbg.generated
     -->
-    desc, content
+    `desc`,`content`
   </sql>
+
+    <select id="getALLArticel" resultType="com.blog.entity.Article">
+		select * from article
+	</select>
 </mapper>

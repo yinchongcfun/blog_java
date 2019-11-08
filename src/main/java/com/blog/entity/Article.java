@@ -28,6 +28,33 @@ public class Article {
      */
     private String tags;
 
+
+    /**
+     * 封面图
+     */
+    private String desc;
+
+    /**
+     * 标签
+     */
+    private String content;
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     /**
      * 封面图
      */
@@ -43,13 +70,13 @@ public class Article {
     /**
      * 0删除，1存在
      */
-    private Boolean status;
+    private Integer status;
 
     /**
      * 0非热门，1热门
      */
     @Column(name = "is_hot")
-    private Boolean isHot;
+    private Integer isHot;
 
     @Column(name = "created_at")
     private Date createdAt;
@@ -198,7 +225,7 @@ public class Article {
      *
      * @return status - 0删除，1存在
      */
-    public Boolean getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
@@ -207,7 +234,7 @@ public class Article {
      *
      * @param status 0删除，1存在
      */
-    public void setStatus(Boolean status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -216,7 +243,7 @@ public class Article {
      *
      * @return is_hot - 0非热门，1热门
      */
-    public Boolean getIsHot() {
+    public Integer getIsHot() {
         return isHot;
     }
 
@@ -225,7 +252,7 @@ public class Article {
      *
      * @param isHot 0非热门，1热门
      */
-    public void setIsHot(Boolean isHot) {
+    public void setIsHot(Integer isHot) {
         this.isHot = isHot;
     }
 

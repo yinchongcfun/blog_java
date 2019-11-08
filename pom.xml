@@ -112,16 +112,23 @@
             <artifactId>jedis</artifactId>
             <version>2.9.3</version>
         </dependency>
-
+        <!--分页插件-->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>5.1.6</version>
+        </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-
+            <!--<plugin interceptor="com.github.pagehelper.PageHelper">-->
+                <!--<artifactId/>-->
+                <!--<property name="dialect" value="mysql"/>-->
+            <!--</plugin>-->
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>

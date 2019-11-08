@@ -8,6 +8,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
 
 /**
  * @author cfun
@@ -25,7 +26,8 @@ public class UserLoginInterceptor extends HandlerInterceptorAdapter {
                 return true;
         }
         // 不满足条件的话，则退回到登录界面
-        System.out.println("请登录");
+        PrintWriter out = response.getWriter();
+        out.println("please login !!");
         return false;
     }
 }

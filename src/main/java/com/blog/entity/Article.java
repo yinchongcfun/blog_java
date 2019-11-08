@@ -1,16 +1,20 @@
 package com.blog.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Date;
 import javax.persistence.*;
 
 public class Article {
     @Id
+    @GeneratedValue(generator = "JDBC")
     private Integer id;
 
     /**
      * 分类id
      */
     @Column(name = "category_id")
+    @JsonProperty("category_id")
     private Integer categoryId;
 
     /**
@@ -76,12 +80,15 @@ public class Article {
      * 0非热门，1热门
      */
     @Column(name = "is_hot")
+    @JsonProperty("is_hot")
     private Integer isHot;
 
     @Column(name = "created_at")
+    @JsonProperty("created_at")
     private Date createdAt;
 
     @Column(name = "updated_at")
+    @JsonProperty("updated_at")
     private Date updatedAt;
 
     /**

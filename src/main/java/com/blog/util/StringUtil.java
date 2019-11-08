@@ -8,9 +8,6 @@ package com.blog.util;
 public class StringUtil {
     /**
      * 字符串转化int
-     *
-     * @param str
-     * @return
      */
     public static int parseInt(String str) {
         return parseInt(str);
@@ -18,8 +15,6 @@ public class StringUtil {
 
 
     /**
-     * @param
-     * @return
      * @desc 判断字符串是否为空
      */
     public static boolean isEmptyOrNull(String s) {

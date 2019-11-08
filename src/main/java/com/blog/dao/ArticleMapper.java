@@ -14,5 +14,7 @@ public interface ArticleMapper extends TkMapper<Article> {
      **/
     List<Article> getALLArticel();
 
+    Article getArticle(@Param(value = "id") Integer id);
+
     List<Article> selectByExampleWithBLOBs(@Param(value = "is_hot") Integer is_hot);
 }

@@ -9,7 +9,8 @@ import java.util.List;
 
 public interface ArticleService {
 
-//    List<Article>  getALLArticel(Integer is_hot);
+    Article  getArticel(Integer id);
 
-    PageWrap<List<Article>> getALLArticel(Integer is_hot);
+    PageWrap<List<Article>> getALLArticel(Integer is_hot,Integer page);
+
 }

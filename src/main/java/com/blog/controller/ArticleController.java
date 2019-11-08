@@ -35,9 +35,22 @@ public class ArticleController extends ChekParams {
      * @date: 2019-11-08
      **/
     @RequestMapping(value = "/article/list", method = RequestMethod.GET)
-    public MyResponse<PageWrap<List<Article>>> list(@RequestParam(value = "is_hot") Integer is_hot) {
-      PageWrap<List<Article>> articleList = articleService.getALLArticel(is_hot);
+    public MyResponse<PageWrap<List<Article>>> list(@RequestParam(value = "is_hot") Integer is_hot, @RequestParam(value = "page") Integer page) {
+      PageWrap<List<Article>> articleList = articleService.getALLArticel(is_hot,page);
       return MyResponse.createSuccess(ArticleEnum.ARTICLE_SUCCESS.message,articleList);
+    }
+
+
+    /**
+     * @desc: 文章列表带分页
+     * @author: cfun
+     * @date: 2019-11-08
+     **/
+    @RequestMapping(value = "/article/detail", method = RequestMethod.GET)
+    public MyResponse<Article> getArticle(@RequestParam(value = "id") Integer id) {
+        checkParamNull(id, "参数不为空");
+        Article article = articleService.getArticel(id);
+        return MyResponse.createSuccess(ArticleEnum.ARTICLE_SUCCESS.message,article);
     }
 
 }

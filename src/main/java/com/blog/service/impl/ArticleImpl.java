@@ -4,11 +4,11 @@ import com.blog.dao.ArticleMapper;
 import com.blog.entity.Article;
 import com.blog.service.ArticleService;
 import com.blog.util.PageWrap;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.entity.Example;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 /**
@@ -28,9 +28,20 @@ public class ArticleImpl implements ArticleService {
      * @date: 2019-11-08
      **/
     @Override
-    public PageWrap<List<Article>> getALLArticel(Integer is_hot) {
-        //判断账号是否已经存在
+    public PageWrap<List<Article>> getALLArticel(Integer is_hot, Integer page) {
         List<Article> articleList = articleMapper.selectByExampleWithBLOBs(is_hot);
-        return PageWrap.createPageWrap(articleList,1,10);
+        return PageWrap.createPageWrap(articleList,page,10);
+    }
+
+
+    /**
+     * @desc: 获取文章
+     * @author: cfun
+     * @date: 2019-11-08
+     **/
+    @Override
+    public Article getArticel(Integer id) {
+        Article article = articleMapper.getArticle(id);
+        return article;
     }
 }

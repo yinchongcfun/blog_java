@@ -43,6 +43,9 @@
 		select * from article
 	</select>
 
+    <select id="getArticle" resultType="com.blog.entity.Article">
+		select * from article where id=#{id}
+	</select>
 
     <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs">
         select
@@ -50,6 +53,11 @@
         ,
         <include refid="Blob_Column_List"/>
         from article
-        where is_hot=#{is_hot}
+        <if test="is_hot != null">
+            where is_hot=#{is_hot}
+        </if>
+
     </select>
+
+
 </mapper>

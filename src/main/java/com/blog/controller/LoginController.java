@@ -30,7 +30,7 @@ public class LoginController extends ChekParams {
      * @author:cfun
      * @date:2019-11-07
      **/
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/admin/login", method = RequestMethod.POST)
     public MyResponse<Object> login(@RequestParam(value = "password") String password, @RequestParam(value = "email") String email) {
         checkParamNull(password, "参数不正确");
         checkParamNull(email, "参数不正确");

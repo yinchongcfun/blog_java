@@ -17,6 +17,8 @@ import java.io.PrintWriter;
  */
 @Component
 public class UserLoginInterceptor extends HandlerInterceptorAdapter {
+
+    @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Object userObj = request.getSession().getAttribute("user");
         if (userObj != null) {

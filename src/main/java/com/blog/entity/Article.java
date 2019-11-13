@@ -36,16 +36,19 @@ public class Article {
     /**
      * 封面图
      */
+    @Column(name = "`desc`")
     private String desc;
 
     /**
      * 标签
      */
+    @Column(name = "content")
     private String content;
 
     public String getDesc() {
         return desc;
     }
+
 
     public void setDesc(String desc) {
         this.desc = desc;

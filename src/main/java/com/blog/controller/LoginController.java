@@ -6,7 +6,6 @@ import com.blog.enums.UserEnum;
 import com.blog.service.UserService;
 import com.blog.util.ChekParams;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,6 +30,7 @@ public class LoginController extends ChekParams {
      * @date:2019-11-07
      **/
     @RequestMapping(value = "/admin/login", method = RequestMethod.POST)
+    @ResponseBody
     public MyResponse<Object> login(@RequestParam(value = "password") String password, @RequestParam(value = "email") String email) {
         checkParamNull(password, "参数不正确");
         checkParamNull(email, "参数不正确");

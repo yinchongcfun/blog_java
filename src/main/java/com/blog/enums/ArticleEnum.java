@@ -7,10 +7,16 @@ package com.blog.enums;
  */
 public enum ArticleEnum {
 
-    //登录成功了
+//    文章添加成功
+    ADD_SUCCESS(200,"文章添加成功"),
+//    文章添加失败
+    ADD_FAIl(200,"文章添加失败"),
+    //文章查询成功
     ARTICLE_SUCCESS(200,"文章查询成功"),
-    //登录失败了
+    //文章查询失败
     ARTICLE_FAIL(500,"文章查询失败");
+
+
     public final int code;
     public final String message;
 

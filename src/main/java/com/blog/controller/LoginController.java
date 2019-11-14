@@ -5,6 +5,7 @@ import com.blog.entity.User;
 import com.blog.enums.UserEnum;
 import com.blog.service.UserService;
 import com.blog.util.ChekParams;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +19,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/blog")
+@Slf4j
 public class LoginController extends ChekParams {
 
     @Autowired
@@ -38,6 +40,8 @@ public class LoginController extends ChekParams {
         if (user != null) {
             //登录成功,设置session信息
             request.getSession().setAttribute("user",user);
+            log.info("登录成功",user);
+            log.error("登录成功",user);
             return MyResponse.createSuccess(UserEnum.LOGIN_SUCCESS.message);
         } else {
             return MyResponse.createFail(UserEnum.LOGIN_FAIL.message);

@@ -27,7 +27,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
         //登录拦截
         registry.addInterceptor(userLoginInterceptor).addPathPatterns("/**")
                 .excludePathPatterns("/blog/admin/login",
-//                        "/blog/admin/add",
+                        "/blog/admin/add",
                         "/blog/register",
                         "/blog/article/list",
                         "/blog/article/detail"
